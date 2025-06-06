@@ -1,0 +1,258 @@
+body {
+  margin: 0;
+  background: linear-gradient(to bottom, #fcae66, #fbc2a9, #87ceeb);
+  height: 100vh;
+  overflow: hidden;
+}
+.sun-wrapper {
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  width: 180px;
+  height: 180px;
+}
+.sun {
+  width: 200px;
+  height: 200px;
+  background: radial-gradient(circle, #ffd700, #ffa500);
+  border-radius: 50%;
+  position: relative;
+  top: 0;
+  left: 0;
+  animation: pulse 3s infinite ease-in-out;
+  box-shadow: 0 0 30px rgba(255, 215, 0, 0.8);
+}
+.rays {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 500px;
+  height: 300px;
+  background-image: repeating-conic-gradient(
+    #ffd700 0deg 10deg,
+    transparent 10deg 20deg
+  );
+  border-radius: 50%;
+  animation: spin 10s linear infinite;
+  z-index: -1;
+  opacity: 0.6;
+}
+@keyframes pulse {
+  0%,
+  100% {
+    transform: translate(-50%, -50%) scale(1);
+    box-shadow: 0 0 30px rgba(255, 215, 0, 0.8);
+  }
+  50% {
+    transform: translate(-50%, -50%) scale(1.1);
+    box-shadow: 0 0 60px rgba(255, 215, 0, 1);
+  }
+}
+@keyframes spin {
+  0% {
+    transform: translate(-50%, -50%) rotate(0deg);
+  }
+  100% {
+    transform: translate(-50%, -50%) rotate(360deg);
+  }
+}
+.cloud {
+  position: absolute;
+  left: 30%;
+  background: #fff;
+  border-radius: 50px;
+  box-shadow: 30px 0px 0px 0px #fff, 60px 10px 0px 0px #fff,
+    90px 0px 0px 0px #fff;
+  opacity: 0.8;
+}
+
+.cloud1 {
+  width: 120px;
+  height: 60px;
+  top: -100px;
+  animation: cloud-fall-1 10s ease-in-out infinite;
+}
+
+.cloud2 {
+  width: 100px;
+  height: 50px;
+  left: 50%;
+  top: -150px;
+  animation: cloud-fall-1 14s ease-in-out infinite;
+}
+
+.cloud3 {
+  width: 140px;
+  height: 70px;
+  left: 70%;
+  top: -200px;
+  animation: cloud-fall-1 12s ease-in-out infinite;
+}
+@keyframes cloud-fall-1 {
+  0% {
+    top: -100px;
+  }
+  50% {
+    top: 60vh;
+  }
+  100% {
+    top: -100px;
+  }
+}
+@keyframes cloud-fall-2 {
+  0% {
+    top: -150px;
+  }
+  50% {
+    top: 55vh;
+  }
+  100% {
+    top: -150px;
+  }
+}
+@keyframes cloud-fall-3 {
+  0% {
+    top: -200px;
+  }
+  50% {
+    top: 65vh;
+  }
+  100% {
+    top: -200px;
+  }
+}
+.bird {
+  position: absolute;
+  width: 40px;
+  height: 20px;
+  background: transparent;
+  border-radius: 50%;
+  box-shadow: 5px 5px 0 0 #000, 15px 5px 0 0 #000;
+  animation: fly 15s linear infinite;
+  transform: rotate(20deg);
+  opacity: 0.7;
+}
+
+.bird1 {
+  top: 20%;
+  animation-delay: 0s;
+}
+
+.bird2 {
+  top: 30%;
+  animation-delay: 4s;
+  opacity: 0.5;
+}
+
+.bird3 {
+  top: 40%;
+  animation-delay: 3s;
+  transform: rotate(15deg);
+  opacity: 0.6;
+}
+
+.bird4 {
+  top: 25%;
+  animation-delay: 2s;
+  opacity: 0.4;
+}
+
+.bird5 {
+  top: 35%;
+  animation-delay: 2s;
+  transform: rotate(25deg);
+  opacity: 0.5;
+}
+
+@keyframes fly {
+  0% {
+    left: -60px;
+  }
+  100% {
+    left: 110%;
+  }
+}
+.ocean {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 200%;
+  height: 200px;
+  background: #1e90ff;
+  overflow: hidden;
+}
+
+.wave {
+  position: absolute;
+  bottom: 0;
+  width: 200%;
+  height: 150px;
+  background: url('data:image/svg+xml;utf8,<svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg"><path d="M0 20 Q30 0 60 20 T120 20 T180 20 T240 20 T300 20 T360 20 T420 20 T480 20 V100 H0 Z" fill="%23ffffff"/></svg>')
+    repeat-x;
+  background-size: 600px 100px;
+  animation: wave-move 10s linear infinite;
+  opacity: 0.4;
+}
+
+.wave:nth-child(2) {
+  animation-delay: -5s;
+  opacity: 0.6;
+}
+.palm-container {
+  position: absolute;
+  bottom: 150px;
+  left: 40px;
+  width: 130px;
+  height: auto;
+  z-index: 0;
+}
+.palm-svg g {
+  transform-origin: 60px 40px;
+  animation: swayPalm 4s ease-in-out infinite;
+}
+
+@keyframes swayPalm {
+  0%,
+  100% {
+    transform: rotate(0deg);
+  }
+  50% {
+    transform: rotate(3deg);
+  }
+}
+.dolphin {
+  position: absolute;
+  bottom: 100px;
+  left: -100px;
+  width: 80px;
+  height: 40px;
+  background: url('data:image/svg+xml;utf8,<svg viewBox="0 0 64 32" xmlns="http://www.w3.org/2000/svg"><path d="M2 16 Q10 2, 30 12 Q40 18, 62 12 Q50 22, 32 18 Q20 20, 2 16 Z" fill="%230066cc"/></svg>')
+    no-repeat center;
+  background-size: contain;
+  animation: dolphinJump 8s ease-in-out infinite;
+  opacity: 0.9;
+  z-index: 3;
+}
+
+@keyframes dolphinJump {
+  0% {
+    transform: translateX(0) translateY(0) rotate(0deg);
+    opacity: 0;
+  }
+  30% {
+    transform: translateX(300px) translateY(-100px) rotate(20deg);
+    opacity: 1;
+  }
+  50% {
+    transform: translateX(500px) translateY(0px) rotate(0deg);
+    opacity: 1;
+  }
+  80% {
+    transform: translateX(800px) translateY(-80px) rotate(-20deg);
+    opacity: 1;
+  }
+  100% {
+    transform: translateX(1000px) translateY(0) rotate(0deg);
+    opacity: 0;
+  }
+}
